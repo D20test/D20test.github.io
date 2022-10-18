@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page 2!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link href="StyleSheet.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body style="background-color: #4e8dff">
+    <h1>Page 2!</h1>
+    <a href="PracCode.html" class="emoji">🍆</a>
+    <p>There's not really anything here</p>
+    <br>
+    <p>I don't really know what to do</p>
+    <img src="https://i.giphy.com/media/Ti22IFo02xb9rQ1ZFi/giphy.gif" alt="Red wiggle being a cool dude">
+    <blockquote>- "I am a really cool dude"</blockquote>
+    <h3>My Google Maps Demo</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <p id="demo"></p>
+    <button onclick="getLocation()">Try It</button>
+
+    <p id="demo"></p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet aliquam dolor. Aenean pellentesque at eros eu porta. Nunc semper purus quis enim pulvinar, a vulputate magna auctor. Mauris id mauris nibh. Vivamus sollicitudin urna vitae auctor dictum. Aliquam erat volutpat. Donec faucibus mollis aliquam.
+      Donec mattis lacus vel malesuada tincidunt. Nunc vitae urna nunc. Curabitur maximus rhoncus gravida. Praesent sed nisl nisi. Donec eu sagittis felis. Donec felis nisl, consectetur eu elit vel, luctus luctus purus. Donec sit amet purus lacinia nibh sodales faucibus at et velit. Mauris quis tortor tristique, posuere tellus et, dapibus libero. Nullam mauris mi, vulputate at lacus vel, ullamcorper iaculis lorem. Quisque id ultricies risus. Aenean sed feugiat arcu. Proin et enim in velit placerat blandit nec vitae purus. In congue mauris nulla, quis rhoncus ante tristique vitae. Nam urna leo, volutpat a felis quis, luctus viverra dolor. Ut velit sapien, pellentesque eget semper vitae, imperdiet a diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at felis at neque facilisis hendrerit. Fusce dictum sollicitudin erat, eu consequat arcu gravida id. Vivamus tortor dolor, faucibus eget varius et, cursus in tortor. Pellentesque condimentum enim sed urna pellentesque sagittis. Nunc et odio augue. Donec ornare pharetra porttitor. Mauris egestas ante id felis tempus cursus. Maecenas a neque at sapien auctor fermentum dictum ac erat. Sed hendrerit sem eget ligula sodales, sit amet ultrices ipsum elementum. Aliquam sapien nisi, fermentum at lorem ut, elementum egestas risus. Curabitur quis malesuada quam. Integer egestas id nisi vel fermentum.
+      Phasellus aliquam eget dui eu imperdiet. Maecenas luctus lectus ac felis volutpat tempor. Integer consectetur ex eget nulla blandit, id facilisis lectus auctor. Nam vitae erat enim. Proin vestibulum tellus et interdum tristique. Aliquam sollicitudin magna nec enim dictum, nec efficitur purus viverra. Donec dapibus rhoncus diam sed vehicula. Sed pulvinar dictum metus sed rhoncus. Praesent tincidunt finibus risus, vitae fringilla est molestie quis. Vestibulum volutpat, diam quis tincidunt venenatis, tellus sapien posuere sem, ut gravida nisi nisl blandit neque. Aliquam erat volutpat. Nullam nec varius ligula.
+      Cras id ipsum pharetra, hendrerit risus id, ullamcorper justo. Duis quis mauris nec sem accumsan rutrum. In eget tincidunt magna. Nullam tristique euismod quam, at euismod sapien. Aenean commodo ipsum non sollicitudin venenatis. Vestibulum et condimentum lectus. Cras ut ipsum tempus, tempor turpis quis, posuere dolor. Integer dictum elit eu felis convallis accumsan. Nullam condimentum molestie velit ac cursus. Donec sit amet convallis est. Proin et dapibus lectus, eu pharetra ligula. Aliquam erat volutpat. Pellentesque non tempus ligula. Pellentesque ullamcorper efficitur sem. Quisque congue nulla vitae efficitur auctor. Nunc lectus purus, pretium at eros quis, sagittis auctor velit.
+    </p>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer></script>
+    <script>
+      var x = document.getElementById("demo");
+
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+
+      function showPosition(position) {
+        updateMap(position.coords.latitude, position.coords.longitude)
+      }
+
+      function initMap() {
+        // The location of Uluru
+        const location = { lat: -25.344, lng: 131.031 };
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: location,
+          mapTypeId: 'satellite'
+
+        });
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+          position: location,
+          map: map,
+        });
+      }
+
+      function updateMap(lat, lng) {
+        // The location of Uluru
+        var location = { lat: lat, lng: lng };
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 16,
+          center: location,
+          mapTypeId: 'satellite'
+        });
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+          position: location,
+          map: map,
+        });
+      }
+
+      window.initMap = initMap;
+    </script>
+
+  </body>
+</html>

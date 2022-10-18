@@ -1,0 +1,53 @@
+h1, h2, h3, h4, h5, h6, p {font-family: "roboto Condensed", sans-serif;}
+
+h1 {
+  font-family: calibri;
+  font-size: 2vw
+}
+
+h2 {
+  font-family: verdana;
+  font-size: 1.625vw
+}
+
+h3 {
+  font-family: Helvetica;
+  font-size: 1.375vw
+}
+
+h4 {
+  font-size: 1.25vw
+}
+
+h5 {
+  font-size: 1vw
+}
+
+h6 {
+  font-size: 0.8vw
+}
+
+.blue {
+  color:blue
+}
+
+.red {
+  color:red
+}
+
+.emoji {
+  font-size: 200px;
+  text-decoration: none
+}
+
+.angus {
+  font-size: 3.7vw;
+  background-color: yellow
+}
+#map {
+  height: 600px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+
+}
